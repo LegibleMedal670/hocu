@@ -308,19 +308,17 @@ class _post_detailState extends State<post_detail> {
               ),
               child: Visibility(
                 visible: textform_visibility,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 6.0),
-                  child: Form(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: " 댓글 입력",
-                        hintStyle: TextStyle(color: Colors.black26),
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.send),
-                          onPressed: (){
-                            print('send');
-                          },
-                        ),
+                child: Form(
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: " 댓글 입력",
+                      hintStyle: TextStyle(color: Colors.black26),
+                      suffixIcon: IconButton(
+                        splashRadius: 1.0,
+                        icon: Icon(Icons.send),
+                        onPressed: (){
+                          print('send');
+                        },
                       ),
                     ),
                   ),
