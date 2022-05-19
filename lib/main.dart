@@ -2,6 +2,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'widgets/post_tile.dart';
+import 'screens/search.dart';
 import 'screens/write_post.dart';
 
 void main() {
@@ -251,20 +252,22 @@ class _MyAppState extends State<MyApp> {
                               )
                             ),
                             height: 60.0,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      print('home');
-                                    },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    print('home');
+                                  },
+                                  child: Container(
+                                    color: Colors.white,
+                                    width: MediaQuery.of(context).size.width * 0.2,
                                     child: Column(
                                       children: [
                                         Icon(
                                           Icons.home,
                                           size: 30.0,
+                                          color: Colors.black54,
                                         ),
                                         Text(
                                           '홈',
@@ -275,15 +278,20 @@ class _MyAppState extends State<MyApp> {
                                       ],
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      print('공지');
-                                    },
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    print('공지');
+                                  },
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width * 0.2,
+                                    color: Colors.white,
                                     child: Column(
                                       children: [
                                         Icon(
                                           Icons.announcement,
                                           size: 30.0,
+                                          color: Colors.black54,
                                         ),
                                         Text(
                                           '공지',
@@ -294,15 +302,20 @@ class _MyAppState extends State<MyApp> {
                                       ],
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      print('개념글');
-                                    },
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    print('개념글');
+                                  },
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width * 0.2,
+                                    color: Colors.white,
                                     child: Column(
                                       children: [
                                         Icon(
                                           Icons.stars,
                                           size: 30.0,
+                                          color: Colors.black54,
                                         ),
                                         Text(
                                           '개념글',
@@ -313,15 +326,21 @@ class _MyAppState extends State<MyApp> {
                                       ],
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      print('검색');
-                                    },
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context, MaterialPageRoute(builder: (context) => searchScreen()));
+                                  },
+                                  child: Container(
+                                    color: Colors.white,
+                                    width: MediaQuery.of(context).size.width * 0.2,
                                     child: Column(
                                       children: [
                                         Icon(
                                           Icons.search,
                                           size: 30.0,
+                                          color: Colors.black54,
                                         ),
                                         Text(
                                           '검색',
@@ -332,16 +351,21 @@ class _MyAppState extends State<MyApp> {
                                       ],
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context, MaterialPageRoute(builder: (context) => writePostScreen()));
-                                    },
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context, MaterialPageRoute(builder: (context) => writePostScreen()));
+                                  },
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width * 0.2,
+                                    color: Colors.white,
                                     child: Column(
                                       children: [
                                         Icon(
                                           CupertinoIcons.pen,
                                           size: 30.0,
+                                          color: Colors.black54,
                                         ),
                                         Text(
                                           '글쓰기',
@@ -352,8 +376,8 @@ class _MyAppState extends State<MyApp> {
                                       ],
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
