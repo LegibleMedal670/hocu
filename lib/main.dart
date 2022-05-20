@@ -2,7 +2,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'widgets/post_tile.dart';
-import 'screens/search.dart';
+import 'screens/search_post.dart';
 import 'screens/write_post.dart';
 
 void main() {
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
                   actions: [
                     IconButton(
                       color: Colors.black,
-                      icon: Icon(Icons.search),
+                      icon: Icon(Icons.filter_alt),
                       onPressed: () {
                         print('search pressed');
                       },
@@ -289,7 +289,7 @@ class _MyAppState extends State<MyApp> {
                                     child: Column(
                                       children: [
                                         Icon(
-                                          Icons.announcement,
+                                          Icons.campaign,
                                           size: 30.0,
                                           color: Colors.black54,
                                         ),
@@ -363,7 +363,7 @@ class _MyAppState extends State<MyApp> {
                                     child: Column(
                                       children: [
                                         Icon(
-                                          CupertinoIcons.pen,
+                                          Icons.edit,
                                           size: 30.0,
                                           color: Colors.black54,
                                         ),
