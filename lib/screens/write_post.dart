@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quill/flutter_quill.dart' as quill;
 
 class writePostScreen extends StatefulWidget {
   const writePostScreen({Key? key}) : super(key: key);
@@ -10,12 +9,11 @@ class writePostScreen extends StatefulWidget {
 
 class _writePostScreenState extends State<writePostScreen> {
   final int appBarColor = 0xfffea640;
-  quill.QuillController _controller = quill.QuillController.basic();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: (){
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
@@ -131,47 +129,16 @@ class _writePostScreenState extends State<writePostScreen> {
               Expanded(
                 flex: 1,
                 child: Container(
-                  child: quill.QuillEditor(
-                    placeholder: ' 내용',
-                    expands: false,
-                    focusNode: FocusNode(),
-                    padding: EdgeInsets.zero,
-                    scrollController: ScrollController(),
-                    scrollable: true,
-                    autoFocus: false,
-                    controller: _controller,
-                    readOnly: false,
+                  child: TextField(
+                    maxLines: null,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: ' 내용',
+                      contentPadding: EdgeInsets.only(left: 5.0),
+                    ),
                   ),
                 ),
-              ),
-              quill.QuillToolbar.basic(
-                controller: _controller,
-                showUndo: false,
-                showRedo: false,
-                showFontSize: false,
-                showBoldButton: false,
-                showItalicButton: false,
-                showUnderLineButton: false,
-                showColorButton: false,
-                showBackgroundColorButton: false,
-                showStrikeThrough: false,
-                showHeaderStyle: false,
-                showListBullets: false,
-                showListNumbers: false,
-                showQuote: false,
-                showLeftAlignment: false,
-                showRightAlignment: false,
-                showIndent: false,
-                showCodeBlock: false,
-                showListCheck: false,
-                showInlineCode: false,
-                showDividers: false,
-                showCenterAlignment: false,
-                showClearFormat: false,
-                showAlignmentButtons: false,
-                showDirection: false,
-                showJustifyAlignment: false,
-              ),
+              )
             ],
           ),
         ),
