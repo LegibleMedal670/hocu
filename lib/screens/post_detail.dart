@@ -122,7 +122,7 @@ class _post_detailState extends State<post_detail> {
                                     color: Colors.black54,
                                   ),
                                   onPressed: () {
-                                    print('choochun');
+                                    print('가가가ㅏ');
                                   },
                                 ),
                                 IconButton(
